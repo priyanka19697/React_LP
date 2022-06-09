@@ -1,1 +1,1 @@
-# jReact LP
+# React LP
