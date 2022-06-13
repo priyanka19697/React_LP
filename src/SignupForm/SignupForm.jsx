@@ -1,15 +1,17 @@
 import React, {useState} from 'react'
 import { validateData } from './helpers';
+import PropTypes from 'prop-types'
 
-function SignupForm(){
-    const [values, setValues] = useState({
-        name: '',
-        email: '',
-        password: '',
-        rePassword: ''
-    })
 
-    const [errors, setErrors] = useState([]);
+function SignupForm({values, setValues, errors, setErrors}){
+    // const [values, setValues] = useState({
+    //     name: '',
+    //     email: '',
+    //     password: '',
+    //     rePassword: ''
+    // })
+
+    // const [errors, setErrors] = useState([]);
 
     const handleInputChange = (event) => {
         event.persist();
@@ -58,6 +60,11 @@ function SignupForm(){
             </ul>
         </form>
     )
+}
+
+SignupForm.propTypes = {
+    values: PropTypes.object,
+    errors: PropTypes.array
 }
 
 export default SignupForm

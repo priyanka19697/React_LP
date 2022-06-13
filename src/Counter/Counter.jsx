@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types'
 
-function Counter({value}) {
+function Counter({count, setCount}) {
   // Declare a new state variable, which we'll call "count"
-  const [count, setCount] = useState(value || 0);
+//   const [count, setCount] = useState(value || 0);
   return (
     <div>
         <h1>{count}</h1>
@@ -14,7 +14,8 @@ function Counter({value}) {
 }
 
 Counter.propTypes = {
-    value: PropTypes.number
+    count: PropTypes.number,
+    setCount: PropTypes.func
 }
 
 export default Counter;

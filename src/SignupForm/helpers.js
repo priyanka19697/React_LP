@@ -17,9 +17,10 @@ export const validateData = (values) => {
 }
 
 function validateEmail(email) {
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
-    if (email.match(validRegex)) {
+
+    if (email.match(emailRegex)) {
         return {
             isEmailValid: true, 
             emailError: null
