@@ -1,10 +1,10 @@
 
 
 export const validateData = (values) => {
-    const { email, password, rePassword } = values
+    const { email, password, repassword } = values
     let errors = []
     const { isEmailValid, emailError } = validateEmail(email)
-    const { isPasswordValid, passwordError } = validatePassword(password, rePassword)
+    const { isPasswordValid, passwordError } = validatePassword(password, repassword)
 
     if (!isEmailValid) {
         errors.push(emailError)
@@ -34,8 +34,8 @@ function validateEmail(email) {
     }
 }
 
-function validatePassword(password, rePassword) {
-    if(password === rePassword){
+function validatePassword(password, repassword) {
+    if(password === repassword){
         return {
             isPasswordValid: true, 
             emailError: null};
