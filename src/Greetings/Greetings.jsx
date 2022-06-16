@@ -1,5 +1,8 @@
-function Greeting(props){
-    const {name} = props;
+import { useParams } from "react-router-dom";
+
+function Greeting(){
+    const {username} = useParams();
+    const displayName = username ? username : "user"
     let today = new Date();
     let time = today.getHours();
     let time_period;
@@ -10,7 +13,7 @@ function Greeting(props){
     else
         time_period = "evening";
     return(
-    <h1>Hello {name}, Good {time_period} </h1>
+    <h1>Hello {displayName}, Good {time_period} </h1>
     )
 
 }
