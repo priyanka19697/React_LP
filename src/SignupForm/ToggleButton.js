@@ -2,10 +2,11 @@ import SwitchContext from "./SwitchContext";
 import React from "react";
 
 export function ToggleButton() {
-    const { toggle, toggleValue } = React.useContext(SwitchContext)
+    const { toggle, setToggleValue } = React.useContext(SwitchContext)
+
     const buttonLabel = toggle ? "Hide Username" : "Show Username"
     return (
-        <button onClick={toggleValue}>
+        <button onClick={setToggleValue}>
             {buttonLabel}
         </button>
     )

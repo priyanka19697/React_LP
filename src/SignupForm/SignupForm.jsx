@@ -3,6 +3,7 @@ import { validateData } from './helpers';
 import PropTypes from 'prop-types'
 import SwitchContext from './SwitchContext';
 import ToggleButton from './ToggleButton';
+import UsernameBlock from './UsernameBlock';
 
 function SignupForm({values, setValues, errors, setErrors}){
     // const [values, setValues] = useState({
@@ -37,24 +38,13 @@ function SignupForm({values, setValues, errors, setErrors}){
         return(<li key={idx}>{error}</li>)
     })
 
-    const {toggle, toggleValue} = useContext(SwitchContext)
+    const {toggle, setToggleValue} = useContext(SwitchContext)
+ 
 
-    const UsernameBlock = (toggle) => {
-        if(toggle){
-            return(
-                <div>
-                <label>Enter Username</label>
-                <input required type="text" name="username" value={values.username} onChange={handleInputChange}></input>
-            </div>
-            )
-        }
-        return ""
-
-    }
     return(
         <form onSubmit={handleSubmit} action>
             <ToggleButton/>
-            {UsernameBlock(toggle)}
+            <UsernameBlock toggle={toggle} values={values} handleInputChange={handleInputChange}></UsernameBlock>
             <div>
                 <label>Enter Name</label>
                 <input required type="text" name="name" value={values.name} onChange={handleInputChange}></input>

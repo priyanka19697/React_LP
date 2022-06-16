@@ -19,7 +19,7 @@ function Parent(){
     const [errors, setErrors] = useState([])
     const [toggle, setToggle] = useState(true)
 
-    const toggleValue = () => {
+    const setToggleValue = () => {
         setToggle(!toggle)
     }
 
@@ -28,7 +28,7 @@ function Parent(){
              {/* <Greeting name={name}/>
              <Counter count= {count} setCount={setCount} />
              <ListView numbers = {numbers}></ListView>  */}
-             <SwitchContext.Provider value={{toggle,toggleValue}}>
+             <SwitchContext.Provider value={{toggle,setToggleValue}}>
                  <SignupForm values={values} setValues={setValues} errors={errors} setErrors={setErrors}/>
              </SwitchContext.Provider>
 
