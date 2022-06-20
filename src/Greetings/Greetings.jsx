@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 
 function Greeting(){
     const {username} = useParams();
-    const displayName = username ? username : "user"
+    const displayName = username ? username : "User"
     let today = new Date();
     let time = today.getHours();
     let time_period;
