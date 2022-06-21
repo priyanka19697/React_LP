@@ -1,14 +1,9 @@
-import React, {useState, useContext} from 'react';
-import Greeting from '../Greetings/Greetings';
-import Counter from '../Counter/Counter'
-import ListView  from '../ListView/ListView';
-import SignupForm from '../SignupForm/SignupForm';
-import SwitchContext from '../SignupForm/SwitchContext';
+import React, {useState} from 'react';
+import SignupForm from './SignupForm';
+import SwitchContext from '../context/SwitchContext';
 
 function Parent(){
-    // const [count, setCount] = useState(0)
-    // const numbers = [1,2,3,4,5]
-    // const name = "Anya"
+
     const [values, setValues] = useState({
         name: '',
         email: '',
@@ -25,14 +20,9 @@ function Parent(){
 
     return(
         <div>
-             {/* <Greeting name={name}/>
-             <Counter count= {count} setCount={setCount} />
-             <ListView numbers = {numbers}></ListView>  */}
              <SwitchContext.Provider value={{toggle,setToggleValue}}>
                  <SignupForm values={values} setValues={setValues} errors={errors} setErrors={setErrors}/>
              </SwitchContext.Provider>
-
-
         </div>
     )
 }

@@ -1,19 +1,12 @@
 import React, {useContext} from 'react'
-import { validateData } from './helpers';
+import { validateData } from '../utils/helpers';
 import PropTypes from 'prop-types'
-import SwitchContext from './SwitchContext';
+import SwitchContext from '../context/SwitchContext';
 import ToggleButton from './ToggleButton';
 import UsernameBlock from './UsernameBlock';
 
 function SignupForm({values, setValues, errors, setErrors}){
-    // const [values, setValues] = useState({
-    //     name: '',
-    //     email: '',
-    //     password: '',
-    //     rePassword: ''
-    // })
 
-    // const [errors, setErrors] = useState([]);
 
     const handleInputChange = (event) => {
         event.persist();
@@ -35,7 +28,7 @@ function SignupForm({values, setValues, errors, setErrors}){
     }
     
     const errorItems = errors && errors.map((error, idx) => {
-        return(<li key={idx}>{error}</li>)
+        return(<li key={idx}>{error}.toString()</li>)
     })
 
     const {toggle, setToggleValue} = useContext(SwitchContext)

@@ -1,4 +1,4 @@
-import SwitchContext from "./SwitchContext";
+import SwitchContext from "../context/SwitchContext";
 import React from "react";
 
 export function ToggleButton() {

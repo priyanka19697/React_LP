@@ -1,8 +1,8 @@
 import {Routes, BrowserRouter as Router, Link , Route} from "react-router-dom";
 import React from "react";
-import Greetings from "../Greetings/Greetings"
-import Counter from "../Counter/Counter"
-import Parent from "../Parent/Parent";
+import Greetings from "./Greeting"
+import Counter from "./Counter"
+import Parent from "./Parent";
 
 export default function ReactRouterApp() {
     return(
